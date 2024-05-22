@@ -1,0 +1,13 @@
+.card-container
+{
+  display: flex;
+  width: 300px;
+  height: 300px;
+
+}
+
+
+.card
+{
+  border-radius: 4; 
+}
