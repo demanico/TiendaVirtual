@@ -9,5 +9,25 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-    titulo:string =  "quetalsida"
+
+  Namber:string = "Hellouda"
+  Nav_0: string = "Home"
+  Nav_1: string = "Productos"
+
+
+
+ NavegarHome(){
+
+
+
+ }
+ NavegarProducts(){
+  
+
+ }
+
+
+
+
+
 }

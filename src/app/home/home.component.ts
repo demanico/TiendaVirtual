@@ -1,39 +1,32 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import {Products} from '../interfaces/productos'
+import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
-import { Users } from '../interfaces/users.interface';
 import { CardsComponent } from '../cards/cards.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardsComponent],
+  imports: [CardsComponent,CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 
-export class HomeComponent {
-  
 
-   export class homeComponent implements OnInit{
+
+
+export class HomeComponent implements OnInit {
     data: any;
-    constructor (private _user: UsersService){
+    constructor (private _users: UsersService){
 
     }
-   }
+
 
 
   ngOnInit(): void {
-    this.getAllUsers();
-
-  };
-
-
-   constructor(private _users: UsersService){ }
+    this.getAllUsers();}
 
    getAllUsers(){
-    this._users-getUsers().subscribe({next:(res)=>{
+    this._users.getUsers().subscribe({next:(res: any)=>{
       console.log(res);
       this.data = res
     }})
