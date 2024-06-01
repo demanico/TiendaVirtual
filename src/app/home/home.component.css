@@ -1,16 +1,8 @@
-.estilo{
-  background-color: blue;
-  height: 100px;
-  width: 100%;
-  color: rgb(0, 0, 0);
+*
+{
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-video{
-  display: grid;
-  place-items: center;
-  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
 
 }

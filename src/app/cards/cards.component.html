@@ -1,9 +1,9 @@
-<div class="card-container"  *ngFor="let item of list"> 
-   <div class="card">
-    <img src="{{item.avatar}}" alt="">
-      <div class="name">{{item}}</div>
-      <div class="rol"></div>
-      <div class="email"></div>
-   </div>
-
+<div class="card">
+  <img src="{{product.image}}" class="card-img"> 
+  <div class="card-body">
+    <h2 class="title">{{product.title}}</h2>
+    <p class="description">{{product.description}}</p>
+    <button class="button">Ver mas</button>
+  </div>
 </div>
+

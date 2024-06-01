@@ -7,12 +7,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { CardsComponent } from './cards/cards.component';
 import { ProductsComponent } from './products/products.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,FormsModule,HttpClientModule,NavbarComponent,HomeComponent,CardsComponent,ProductsComponent],
+  imports: [RouterOutlet,FormsModule,HttpClientModule,NavbarComponent,HomeComponent,CardsComponent,ProductsComponent,ToolbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

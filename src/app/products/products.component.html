@@ -1,1 +1,17 @@
-<p>products works!</p> 
+
+@if(products$ | async; as products){
+@for(product of products; track product.id){
+
+<app-cards [product]="product"></app-cards>
+
+}
+}
+
+
+
+
+
+
+
+
+

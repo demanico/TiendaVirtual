@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { UsersService } from '../users.service';
+import { Component, inject} from '@angular/core';
 import { CardsComponent } from '../cards/cards.component';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
+import { CarouselComponent } from '../carousel/carousel.component';
+import { ProductsService } from '../products.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CardsComponent,CommonModule],
+  imports: [CardsComponent,CommonModule,CarouselComponent,AsyncPipe],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -14,23 +15,10 @@ import { CommonModule } from '@angular/common';
 
 
 
-export class HomeComponent implements OnInit {
-    data: any;
-    constructor (private _users: UsersService){
+export class HomeComponent{
 
-    }
-
+  private readonly productsSvc = inject(ProductsService)
+  products$ = this.productsSvc.getAllProducts()
 
 
-  ngOnInit(): void {
-    this.getAllUsers();}
-
-   getAllUsers(){
-    this._users.getUsers().subscribe({next:(res: any)=>{
-      console.log(res);
-      this.data = res
-    }})
-
-
-   }
 }

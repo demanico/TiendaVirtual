@@ -10,7 +10,4 @@ export class UsersService {
   return  this._http.get("https://api.escuelajs.co/api/v1/users")
   }
   constructor(private _http: HttpClient ) { }
-
-
-
 }

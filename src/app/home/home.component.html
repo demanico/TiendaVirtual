@@ -1,1 +1,5 @@
-<h1>Homero chino</h1> 
+@if(products$ | async; as products){
+  @for(product of products; track product.id){
+<app-carousel [product]="product"/>
+  }
+}

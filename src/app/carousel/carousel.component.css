@@ -1,0 +1,82 @@
+.carousel
+{
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+
+}
+
+.card-wrapper{
+  max-width: 1200px;
+ padding: 24px 0px;
+ overflow-x: hidden;  /* para ocultar lo que sobre sale del contedor */
+ background-color: white;
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: row;
+ gap: 12px;
+ position: relative;
+ z-index: 100;
+}
+
+
+.img-carousel{
+  height: 200px;
+}
+
+
+.carousel:hover .next-products{
+  display: block;
+}
+
+.card{
+background-color: antiquewhite;
+min-width: 230px;
+}
+
+.card:hover
+{
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+}
+
+.card figure{
+
+  width: 100%;
+  height: 230px;
+}
+
+.card figure img
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.next-products{
+  position: absolute;
+  background-color: white;
+  z-index: 200;
+  color: rgb(126, 126, 192);
+  width: 70px;
+  height: 70px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  outline: none;
+  border: none;
+  top: 50%;
+  right: -35px;
+  cursor: pointer;
+}
+
+
+.next-products:hover
+{
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+
+}

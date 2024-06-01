@@ -1,22 +1,20 @@
 import { CommonModule } from '@angular/common';
-import { Component,Input } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Users } from '../interfaces/users.interface';
 import { HomeComponent } from '../home/home.component';
+
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [FormsModule,CommonModule,CardsComponent,HomeComponent],
+  imports: [FormsModule,CommonModule],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.css'
 })
-export class CardsComponent {
+export class CardsComponent{
 
- @Input() list : Users[] = [];
-
-
-constructor(){}
+ @Input({required: true}) product!:any; 
 
 
-} 
+
+}
