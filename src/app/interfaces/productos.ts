@@ -1,14 +1,18 @@
-export interface Products{
-  name:string,
-  money?:ProductPrices,
-  category: number,
-  description?:string,
-  price:number
+interface Rating{
+  rete: number;
+  count:number;
 }
 
+export interface product{
+  id:number;
+  title:string;
+  price:number;
+  category:string;
+  description:string;
+  image:string;
+  rating:Rating;
+  qty:number;
+  subTotal:number; 
 
-export interface ProductPrices{
-  cost:number,
-  tax:number,
-  price:number
+
 }

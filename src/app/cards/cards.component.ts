@@ -1,20 +1,28 @@
+
 import { CommonModule } from '@angular/common';
-import { Component,Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, input, Output} from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HomeComponent } from '../home/home.component';
+import { RouterLink } from '@angular/router';
+import { product } from 'app/interfaces/productos';
+import { ProductsComponent } from 'app/products/products.component';
+
 
 
 @Component({
   selector: 'app-cards',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,RouterLink],
   templateUrl: './cards.component.html',
   styleUrl: './cards.component.css'
 })
 export class CardsComponent{
 
- @Input({required: true}) product!:any; 
+  product = input.required<product>();
+  @Output() onAddToCardEvent = new EventEmitter<product>();
 
+  onAddToCard():void{
+    this.onAddToCardEvent.emit(this.product())
 
+  }
 
 }

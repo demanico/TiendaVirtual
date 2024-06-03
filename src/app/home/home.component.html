@@ -1,5 +1,0 @@
-@if(products$ | async; as products){
-  @for(product of products; track product.id){
-<app-carousel [product]="product"/>
-  }
-}

@@ -1,16 +1,13 @@
+<section>
+  <div class="container">
+    <div class="content">
+      @for (product of products(); track $index) {
+        <app-cards [product]="product" ></app-cards>
+      }
+    </div>
 
-@if(products$ | async; as products){
-@for(product of products; track product.id){
-
-<app-cards [product]="product"></app-cards>
-
-}
-}
-
-
-
-
-
+  </div>
+</section>
 
 
 
