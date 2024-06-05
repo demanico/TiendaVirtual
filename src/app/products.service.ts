@@ -19,7 +19,6 @@ private readonly _injector = inject(EnvironmentInjector);
 
 constructor(){
   this.getProducts();
-
 }
     getProducts(): void {
        this._http

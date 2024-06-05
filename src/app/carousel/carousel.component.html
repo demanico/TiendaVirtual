@@ -1,12 +1,15 @@
 <div class="carousel">
    <div class="card-wrapper" id="cards">
-      <div class="card" *ngFor="let x of [0,0,0,0]">
+      <div class="card" >
         <figure>
-          <img [src]="product.images" class="img-carousel">
+          @for (img of imgArray[1]; track $index) {
+
+            <img src="{{img}}" class="img-carousel">
+           }
         </figure>
       </div>
    </div>
-    <button class="next-products" (click)=" nextProducts()">
+    <button (click)="NexProduct()" class="next-products">
       >
     </button>
 </div>

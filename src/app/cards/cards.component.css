@@ -18,6 +18,8 @@
 {
   transition: box-shadow 0.2s ease-in-out;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 .card-body
 {
@@ -37,6 +39,7 @@ border-radius: 4px;
 .card-img{
   position: relative;
   width: 100%;
+  cursor: pointer;
 
 
 }
@@ -45,6 +48,7 @@ border-radius: 4px;
   font-size: 18px;
   font-weight: 500;
   margin-bottom: 4px;
+  cursor: pointer;
 
 }
 

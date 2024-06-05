@@ -1,14 +1,23 @@
- {{ProductId()}} - My Product
-
-<div class="card">
-  <a class="content-img">
-    <img src="{{product()?.image}}" class="card-img" >
-  </a>
-  <div class="card-body">
-    <h2 class="title">{{product()?.title}}</h2>
-    <p class="description">{{product()?.category}}</p>
-    <button class="button">Ver mas</button>
+<div class="container-details">
+  <div class="img-details">
+    <img class="image" src="{{product()?.image}}" alt="">
+  </div>
+  <div class="card-body ">
+      <span class="category">{{product()?.category}}</span>
+      <span class="title">{{product()?.title}}</span>
+      <div class="rating-dis">
+         @for (star of starArray; track index; let index = $index ) {
+           <span [innerHTML]="genereteSvg(index)"></span>
+         }
+        <span class="rating">{{product()?.rating?.count}} reviews</span>
+      </div>
+      <div class="descriptions-card">
+         <span class="descriptions">{{product()?.description}}</span>
+      </div>
+      <div class="price-card">
+        <span class="price">{{product()?.price | currency}}</span>
+        <button class="button" >Add to cart</button>
+      </div>
   </div>
 </div>
-
 

@@ -1,74 +1,98 @@
-.card
+.container-details{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+
+.img-details
 {
-  min-height: 500px;
-  padding: 16px;
-  margin-top: 8px;
-  margin-bottom: 6px;
-  margin-left: 10px;
-  width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-
+display: flex;
+justify-content: center;
+width: auto;
+padding: 10px;
 
 }
-.card:hover
+
+.image
 {
-  transition: box-shadow 0.2s ease-in-out;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.1);
-}
-.card-body
-{
-  padding: 20px;
-  margin-top: 16px;
+max-width: 300px;
 
 }
 
-.content-img{
-display: block;
-position: relative;
-height: 192px;
-overflow: hidden;
-border-radius: 4px;
-
-}
-.card-img{
-  position: relative;
-  width: 100%;
-
-
+.card-body{
+display: flex;
+flex-wrap: wrap;
+flex-direction: column;
+max-width: 350px;
+padding-left: 10px;
 }
 
-.title {
-  font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 4px;
 
+.category{
+  margin-top: 20px;
+  font-size: 16px;
+  color: gray;
+  margin-bottom: 0;
 }
 
-.description {
-  font-size: 12px;
+.title{
+  display: flex;
+  font-size: 20px;
   color: black;
-  margin: 0 0 50px;
-  letter-spacing: 0.3em;
 }
 
+
+.rating-dis{
+  display: flex;
+  justify-content: flex-start;
+}
+.rating{
+  color: gray;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.descriptions-card{
+margin-top: 50px;
+
+
+}
+
+.descriptions{
+  font-size: 14px;
+  padding: 5px;
+  overflow: hidden;
+  color: gray;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.price-card{
+  margin-top: 15px;
+  display: flex;
+}
+
+.price
+{
+  color: rgb(35, 100, 185);
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 .button{
   background-color: rgb(71, 71, 97);
-  height: 40px;
+  max-height: 40px;
   width: 80px;
   border-radius: 8px;
-  margin: 10px;
-  font-size: 18px;
+  margin-left: auto;
+  font-size: 14px;
   color:white;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   cursor: pointer;
+
 }
 .button:hover {
   background-color: #0056b3;
 }
-
 

@@ -1,5 +1,5 @@
 interface Rating{
-  rete: number;
+  rate: number;
   count:number;
 }
 
@@ -12,7 +12,5 @@ export interface product{
   image:string;
   rating:Rating;
   qty:number;
-  subTotal:number; 
-
-
+  subTotal:number;
 }
