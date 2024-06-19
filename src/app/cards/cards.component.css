@@ -1,6 +1,6 @@
 .card
 {
-  min-height: 500px;
+  min-height: 700px;
   padding: 16px;
   margin-top: 8px;
   margin-bottom: 6px;
@@ -52,11 +52,17 @@ border-radius: 4px;
 
 }
 
+.description-desbord{
+  height:500px;
+}
+
+
 .description {
   font-size: 12px;
   color: black;
   margin: 0 0 50px;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.2em;
+
 }
 
 

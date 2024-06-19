@@ -5,12 +5,6 @@
   <div class="card-body ">
       <span class="category">{{product()?.category}}</span>
       <span class="title">{{product()?.title}}</span>
-      <div class="rating-dis">
-         @for (star of starArray; track index; let index = $index ) {
-           <span [innerHTML]="genereteSvg(index)"></span>
-         }
-        <span class="rating">{{product()?.rating?.count}} reviews</span>
-      </div>
       <div class="descriptions-card">
          <span class="descriptions">{{product()?.description}}</span>
       </div>

@@ -30,7 +30,10 @@ constructor(){
     getProductsById(id: number){
       return  runInInjectionContext(this._injector,()=>
       toSignal<product>(this._http.get<product>(`${this._endPoint}/${id}`) ))
+
     }
+    
+
 
 
 }

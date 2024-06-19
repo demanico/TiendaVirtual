@@ -15,6 +15,16 @@ margin-right: auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: -1rem; /* Cambiar a -16px si el valor es en píxeles */
+  margin: -16px;
 
 }
+
+.bus{
+  margin-bottom: 50px;
+}
+.buscador{
+
+  position: relative;
+
+}
+

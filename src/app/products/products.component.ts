@@ -3,6 +3,7 @@ import { Component, inject, } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CardsComponent } from '../cards/cards.component';
 import { ProductsService } from 'app/products.service';
+import { product } from 'app/interfaces/productos';
 
 
 @Component({
@@ -16,6 +17,9 @@ export class ProductsComponent {
   private readonly productSvc = inject(ProductsService);
   products =  this.productSvc.products;
 
+  filterData!: product[] | null;
+  searchData:string ='';
+  
 }
 
 

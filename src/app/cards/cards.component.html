@@ -3,8 +3,11 @@
     <img src="{{product().image}}" class="card-img" [routerLink]="['/products',(product().id)]">
   </a>
   <div class="card-body">
-    <h2 class="title" [routerLink]="['/products',(product().id)]" >{{product().title | slice:0:30}}</h2>
-    <p class="description">{{product().category}}</p>
+    <h2 class="title" [routerLink]="['/products',(product().id)]" >{{product().title| slice:0:30}}</h2>
+    <span class="description-desbord">
+
+      <p class="description">{{product().description}}</p>
+    </span>
     <button class="button" (click)="onAddToCard">Ver mas</button>
   </div>
 </div>

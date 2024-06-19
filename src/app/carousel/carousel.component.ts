@@ -1,5 +1,5 @@
-import { CommonModule, NgFor } from '@angular/common';
-import { Component,Input } from '@angular/core';
+import { CommonModule} from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -15,7 +15,10 @@ export class CarouselComponent {
 
 NexProduct(){
   for(let i = 0 ; i <= 3; i++){
-     this.img = this.imgArray[3]
+    setTimeout(() => {
+
+      this.img = this.imgArray[i]
+    }, 1000);
 
   }
 }
