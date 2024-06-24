@@ -1,6 +1,6 @@
 
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { product } from 'app/interfaces/productos';
@@ -17,12 +17,14 @@ import { ProductsComponent } from 'app/products/products.component';
 })
 export class CardsComponent{
 
-  product = input.required<product>();
+  @Input() productosInfo!: product ;
+
+
   @Output() onAddToCardEvent = new EventEmitter<product>();
 
-  onAddToCard():void{
+/*   onAddToCard():void{
     this.onAddToCardEvent.emit(this.product())
 
-  }
+  } */
 
 }

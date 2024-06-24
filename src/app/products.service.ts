@@ -1,10 +1,10 @@
 
 import { HttpClient } from '@angular/common/http';
-import {EnvironmentInjector, inject, Injectable, runInInjectionContext, signal } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { environment } from '@envs/environment';
-import {  tap } from 'rxjs';
-import { product } from './interfaces/productos';
-import {toSignal} from '@angular/core/rxjs-interop';
+import {  Observable } from 'rxjs';
+import {  Results} from './interfaces/productos';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,29 +12,37 @@ import {toSignal} from '@angular/core/rxjs-interop';
 
 export class ProductsService {
 
-public products  = signal<product[]>([]);
-private readonly _http = inject(HttpClient);
-private readonly _endPoint = environment.apiURL;
-private readonly _injector = inject(EnvironmentInjector);
+  private readonly _endPoint = environment.apiURL;
+  private _http = inject(HttpClient) ;
 
-constructor(){
-  this.getProducts();
-}
-    getProducts(): void {
-       this._http
-       .get<product[]>(`${this._endPoint}/?sort=desc`)
-       .pipe(tap((data:product[]) => this.products.set(data)))
-       .subscribe()
 
+    getProductsList():Observable<Results> {
+      return this._http.get<Results>(this._endPoint)
      }
-    getProductsById(id: number){
+
+     getProductoById(id: number): Observable<Results>{
+      return this._http.get<Results>(`${this._endPoint}?linkTo=id_producto&equalTo=${id}`);
+    }
+
+    getProductByName(name: string)
+    {
+      return this._http.get(`${this._endPoint}?linkTo=nombre_producto&equalTo=${name}`)
+    }
+
+
+
+//Api FakeApi
+ /*    getProductsById(id: number){
       return  runInInjectionContext(this._injector,()=>
       toSignal<product>(this._http.get<product>(`${this._endPoint}/${id}`) ))
 
-    }
-    
+    } */
 
+    /* getFilterName(name:string){
+      return runInInjectionContext(this._injector,()=>
+        toSignal<product>(this._http.get<product>(`${this._endPoint}/?title = ${name}`) ))
+    }
+ */
 
 
 }
-

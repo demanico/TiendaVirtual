@@ -1,17 +1,23 @@
 <section>
   <div class="container">
     <div class="bus">
-      <input [(ngModel)]="filterData" class="buscador" type="text" name="" id="" placeholder="Buscar producto">
+      <input type="text" placeholder="Buscar Product" [(ngModel)]="searchData" (keyup)="getFileteredPruducts()" >
     </div>
-    {{filterData}} 
     <div class="content">
-      @for (product of products(); track $index) {
-        <app-cards [product]="product" ></app-cards>
+      @if(searchData !=''){
+        @for ( product of filterData; track $index) {
+           <app-cards [productosInfo]="product" />
+          }
+      }
+      @if(searchData == ''){
+        @for ( product of productos; track $index) {
+          <app-cards [productosInfo]="product" />
+         }
       }
     </div>
-
   </div>
 </section>
+
 
 
 

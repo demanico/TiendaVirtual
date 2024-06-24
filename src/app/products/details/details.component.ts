@@ -1,7 +1,9 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, inject, input, OnInit, Signal } from '@angular/core';
-import { product } from 'app/interfaces/productos';
+import { Component, inject, Input, input, OnInit, Signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { product,Results } from 'app/interfaces/productos';
 import { ProductsService } from 'app/products.service';
+import { __param } from 'tslib';
 
 
 @Component({
@@ -12,12 +14,21 @@ import { ProductsService } from 'app/products.service';
   styleUrl: './details.component.css'
 })
 export class DetailsComponent implements OnInit{
-ProductId  = input<number>(0,{alias: 'id'} );
-product!: Signal<product | undefined>;
-private readonly ProductsSvc = inject(ProductsService )
+@Input({alias: 'id' }) productId!: number;
+productDetail:product | undefined
+private _route = inject(ActivatedRoute)
+private _productoService = inject(ProductsService)
 
 ngOnInit(): void {
-  this.product = this.ProductsSvc.getProductsById(this.ProductId());
+  this._route.params.subscribe(params =>{
+    this._productoService.getProductoById(params['id']).subscribe((data: Results)=>{
+      this.productDetail = data.results[0];
+
+    })
+  })
 }
+
+
 }
+
 

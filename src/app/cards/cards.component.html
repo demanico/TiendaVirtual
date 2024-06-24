@@ -1,14 +1,16 @@
 <div class="card">
   <a class="content-img">
-    <img src="{{product().image}}" class="card-img" [routerLink]="['/products',(product().id)]">
+    <img src="https://controlstock.com.ar/demauri/{{ productosInfo.imagen_producto}}" class="card-img" [routerLink]="['/products',(productosInfo.id_producto)]">
   </a>
   <div class="card-body">
-    <h2 class="title" [routerLink]="['/products',(product().id)]" >{{product().title| slice:0:30}}</h2>
+    <h2 class="title" [routerLink]="['/products',(productosInfo.id_producto)]" >{{productosInfo.nombre_producto | slice:0:30}}</h2>
+     <span class="card-price">
+       <p class="price">$ {{productosInfo.precio_producto}}</p>
+     </span>
     <span class="description-desbord">
-
-      <p class="description">{{product().description}}</p>
+      <p class="description">{{productosInfo.descripcion_producto | slice:0:98}}</p>
     </span>
-    <button class="button" (click)="onAddToCard">Ver mas</button>
+    <!-- <button class="button">Ver mas</button> -->
   </div>
 </div>
 

@@ -1,15 +1,15 @@
 <div class="container-details">
   <div class="img-details">
-    <img class="image" src="{{product()?.image}}" alt="">
+    <img class="image" src="https://controlstock.com.ar/demauri/{{productDetail?.imagen_producto}}" alt="">
   </div>
   <div class="card-body ">
-      <span class="category">{{product()?.category}}</span>
-      <span class="title">{{product()?.title}}</span>
+      <span class="category">{{productDetail?.categoria_producto}}</span>
+      <span class="title">{{productDetail?.nombre_producto}}</span>
       <div class="descriptions-card">
-         <span class="descriptions">{{product()?.description}}</span>
+         <span class="descriptions">{{productDetail?.descripcion_producto}}</span>
       </div>
       <div class="price-card">
-        <span class="price">{{product()?.price | currency}}</span>
+        <span class="price"> {{productDetail?.precio_producto| currency}}</span>
         <button class="button" >Add to cart</button>
       </div>
   </div>
