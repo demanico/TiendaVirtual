@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CardsComponent } from '../cards/cards.component';
 import { ProductsService } from 'app/products.service';
 import { product, Results} from 'app/interfaces/productos';
-import { catchError, EMPTY, Observable } from 'rxjs';
+
 
 
 @Component({
@@ -35,7 +35,8 @@ ngOnInit(): void {
 
   getFileteredPruducts(){
     this.filterData = this.productos.filter((product: product)=>{
-     return product.nombre_producto.includes(this.searchData)
+     return product.nombre_producto.toLowerCase().includes(this.searchData.toLowerCase())
+
 
     })
 
