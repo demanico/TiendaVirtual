@@ -1,7 +1,12 @@
-<section>
-  <div class="container">
+<div class="container">
+    <div class="image">
+      <img class="image" src="../../assets/photo24.jpg" alt="" >
+    </div>
+    <div class="title">
+      <h1>PRODUCTOS</h1>
+    </div>
     <div class="bus">
-      <input type="text" placeholder="Buscar Product" [(ngModel)]="searchData" (keyup)="getFileteredPruducts()" >
+      <input class="buscador" type="text" placeholder="Buscar Product" [(ngModel)]="searchData" (keyup)="getFileteredPruducts()" >
     </div>
     <div class="content">
       @if(searchData !=''){
@@ -15,8 +20,7 @@
          }
       }
     </div>
-  </div>
-</section>
+</div>
 
 
 

@@ -11,3 +11,12 @@ width: 100%;
 position: fixed;
 z-index: -200;
 }
+
+.transparents{
+  width: 100%;
+  height: 1000px;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

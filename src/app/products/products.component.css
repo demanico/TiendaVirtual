@@ -1,15 +1,16 @@
 .container
 {
-
-padding-left: 1.25rem;
 padding-right: 1.25rem;
 padding-top: 6rem;
 padding-bottom: 6rem;
 margin: -16px;
 margin-left: auto;
 margin-right: auto;
+height: 100%;
+width: 100%;
 
 }
+
 
 .content{
   display: flex;
@@ -18,13 +19,36 @@ margin-right: auto;
   margin: -16px;
 
 }
+.image{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: -200;
+  }
 
 .bus{
+  display: flex;
+  justify-content: center;
   margin-bottom: 50px;
+  margin-top: 20px;
+  max-width: 100%;
 }
 .buscador{
+  width:500px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
 
-  position: relative;
 
 }
+
+
+.title{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 35px;
+  color: white;
+}
+
 
