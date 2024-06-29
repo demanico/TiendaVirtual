@@ -1,4 +1,3 @@
-import { DetailsComponent } from './details/details.component';
 import { CommonModule, AsyncPipe } from '@angular/common';
 import { Component, inject, OnInit, } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -11,13 +10,13 @@ import { product, Results} from 'app/interfaces/productos';
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [AsyncPipe,FormsModule,CommonModule,CardsComponent,DetailsComponent],
+  imports: [AsyncPipe,FormsModule,CommonModule,CardsComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
 export class ProductsComponent implements  OnInit {
   private producSvc = inject(ProductsService);
-  productos: product[] = [];
+  productos!: product[];
   searchData: string = '';
   filterData!: product[] | null;
   data!:product[];
@@ -33,16 +32,13 @@ ngOnInit(): void {
 
   }
 
-  getFileteredPruducts(){
-    this.filterData = this.productos.filter((product: product)=>{
-     return product.nombre_producto.toLowerCase().includes(this.searchData.toLowerCase())
-
-
-    })
-
+  getFileteredPruducts() {
+    if (this.searchData != '') {
+      this.producSvc.getProductByName(this.searchData).subscribe({ next: (res: Results) => { this.productos = res.results } })
+    } else {
+      this.getAllProducts()
+    }
   }
 
+
 }
-
-
-

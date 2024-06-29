@@ -9,16 +9,9 @@
       <input class="buscador" type="text" placeholder="Buscar Product" [(ngModel)]="searchData" (keyup)="getFileteredPruducts()" >
     </div>
     <div class="content">
-      @if(searchData !=''){
-        @for ( product of filterData; track $index) {
-           <app-cards [productosInfo]="product" />
-          }
-      }
-      @if(searchData == ''){
         @for ( product of productos; track $index) {
           <app-cards [productosInfo]="product" />
          }
-      }
     </div>
 </div>
 

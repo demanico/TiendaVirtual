@@ -1,4 +1,3 @@
-
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '@envs/environment';
@@ -24,12 +23,9 @@ export class ProductsService {
       return this._http.get<Results>(`${this._endPoint}?linkTo=id_producto&equalTo=${id}`);
     }
 
-    getProductByName(name: string)
-    {
-      return this._http.get(`${this._endPoint}?linkTo=nombre_producto&equalTo=${name}`)
-    }
-
-
+      getProductByName(name: string): Observable<Results>{
+      return this._http.get<Results>(`${this._endPoint}?linkTo=nombre_producto&equalTo=${name}`)
+   }
 
 //Api FakeApi
  /*    getProductsById(id: number){
